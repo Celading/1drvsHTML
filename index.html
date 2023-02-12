@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 
 <head>
     <meta charset="utf-8">
@@ -42,13 +42,16 @@
                 --cardFtSize: 18px;
                 --cardPadding: 5em 0 1em 0;
             }
-            #header .Menus{
+
+            #header .Menus {
                 padding: 0 2em;
             }
-            .navbar-toggler{
+
+            .navbar-toggler {
                 display: none;
             }
-            .nav-link{
+
+            .nav-link {
                 margin-left: 2em;
             }
         }
@@ -140,14 +143,16 @@
             padding: 0;
         }
 
-        .nav-brand h5{
-            margin: -2em 0 0 -38em;;
+        .nav-brand h5 {
+            margin: -2em 0 0 -38em;
+            ;
             font-size: 1px;
             transform: scale(0.6);
 
         }
 
-        .nav-brand, .nav-link{
+        .nav-brand,
+        .nav-link {
             color: #A8A8A8;
         }
 
@@ -368,7 +373,7 @@
             border: 0.2em dotted #000;
         }
 
-        .btn{
+        .btn {
             display: none;
         }
 
@@ -381,22 +386,24 @@
                 border-color 0.15s ease-in-out;
         }
 
-        .row1-wd, .row2-wd, .row3-wd{
+        .row1-wd,
+        .row2-wd,
+        .row3-wd {
             padding: 2em;
         }
 
-        .row1-wd{
+        .row1-wd {
             text-align: left;
             border-bottom: 2px dotted #666;
         }
 
-        .row2-wd{
+        .row2-wd {
             display: grid;
             grid-template-columns: var(--easyWidth);
             gap: 2em;
         }
 
-        .row2-search{
+        .row2-search {
             text-align: left;
         }
     </style>
@@ -405,7 +412,9 @@
 <body style="background-color: #EBEBEB;height: 100%;">
     <div id="header">
         <div class="Menus">
-            <a class="nav-brand" href="/">1drvs.com<br /><h5>lets download drivers in 1drvs.com</h5></a>
+            <a class="nav-brand" href="/">1drvs.com<br />
+                <h5>lets download drivers in 1drvs.com</h5>
+            </a>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -653,7 +662,7 @@
 
         window.addEventListener('devtoolschange', function (e) {
             if (e.detail.open) {
-                //document.getElementsByTagName('body')[0].innerHTML = '<h1>警告：</h1><h3>请登录后再进行后台编辑</h3><h5 style="color:#999">code: 0xc000007125</h5>';
+                document.getElementsByTagName('body')[0].innerHTML = '<h1>警告：</h1><h3>请登录后再进行后台编辑</h3><h5 style="color:#999">code: 0xc000007125</h5>';
             }
         })
 
