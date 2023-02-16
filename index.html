@@ -2,671 +2,673 @@
 <html lang="cn">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>1Drvs | download Drivers in 1drvs</title>
-    <style>
-        body {
-            --pageMinSize: 10px;
-            --backGColor: #CCC;
-        }
-
-        @media (min-width: 100px) {
-            body {
-                --headerPadding: 0.3em 0;
-                --contentPadding: 0 20px;
-                --easyWidth: repeat(1, 1fr);
-                --inputWidth: auto;
-                --inputPadding: 1em;
-                --inputBtnPadding: 1em 1.5em 1em 1.5em;
-                --cardFtSize: 12px;
-                --cardPadding: 5em 0 1em 0;
-            }
-        }
-
-        @media (min-width: 862px) {
-            body {
-                --easyWidth: repeat(1, 1fr);
-            }
-        }
-
-        @media (min-width: 1200px) {
-            body {
-                --headerPadding: 1em 0;
-                --contentPadding: 0 50px;
-                --easyWidth: repeat(2, 1fr);
-                --inputWidth: 28em;
-                --inputPadding: 1.2em 10em;
-                --inputBtnPadding: 1.2em 1.8em 1.2em 1.8em;
-                --cardFtSize: 18px;
-                --cardPadding: 5em 0 1em 0;
-            }
-
-            #header .Menus {
-                padding: 0 2em;
-            }
-
-            .navbar-toggler {
-                display: none;
-            }
-
-            .nav-link {
-                margin-left: 2em;
-            }
-        }
-
-        :visited {
-            text-decoration-color: rgba(0, 0, 0, 0);
-        }
-
-        body {
-            padding: 0;
-            margin: 0;
-            height: 100%;
-            width: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji;
-            overflow-y: hidden;
-        }
-
-        div,
-        span,
-        a,
-        li,
-        button {
-            transition: all 0.3s cubic-bezier(0.57, 0.45, 0, 0.98);
-        }
-
-        li {
-            user-select: none;
-            list-style: none;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .app {
-            height: 100vh;
-            width: 100%;
-            background: #FAFAFA;
-            display: grid;
-            grid: 7% 93% 0% /100%
-        }
-
-        #header {
-            width: 100%;
-            background: #1d478a;
-            border-bottom: #174082 solid 3px;
-            display: flex;
-            color: #CCC;
-            font-weight: 600;
-            padding: var(--headerPadding);
-        }
-
-        #content {
-            background-color: #CCC;
-            padding: var(--contentPadding);
-            text-align: center;
-            z-index: 1;
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            padding: 12px 12px;
-            color: rgba(0, 0, 0, 0.5);
-            font-size: var(--pageMinSize);
-            text-align: left;
-            z-index: 1001;
-        }
-
-        footer h3,
-        footer h4,
-        footer h5,
-        footer h6 {
-            margin: -0.2em;
-        }
-
-        footer h5 {
-            margin-left: -0.7em;
-            color: rgba(0, 0, 0, 0.2);
-        }
-
-        footer h5 a {
-            color: rgba(0, 0, 0, 0.3);
-        }
-
-        .Menus {
-            flex: 1;
-            display: flex;
-            padding: 0;
-        }
-
-        .nav-brand h5 {
-            margin: -2em 0 0 -38em;
-            ;
-            font-size: 1px;
-            transform: scale(0.6);
-
-        }
-
-        .nav-brand,
-        .nav-link {
-            color: #A8A8A8;
-        }
-
-        .Menu {
-            display: flex;
-            margin: 0 1.3em;
-            align-items: center;
-        }
-
-        .MenuSetting {
-            font-size: 10px;
-            margin-right: 5vw;
-        }
-
-        .InputSearch {
-            margin: 2em 0;
-            display: flex;
-            justify-content: center;
-            z-index: 0;
-        }
-
-        .InputSearch:hover,
-        .InputSearch:active {
-            z-index: 10;
-        }
-
-        .InputExc {
-            position: relative;
-            z-index: 1;
-        }
-
-        #InputSearchQuick {
-            position: relative;
-            display: flex;
-            flex-flow: row wrap;
-            padding: 0;
-            width: 100%;
-            margin-top: -1.5em;
-            background: linear-gradient(rgba(168, 168, 168, 0) 6%, #A8A8A8);
-            line-height: 6em;
-            z-index: -1;
-        }
-
-        #InputSearchQuick:hover {}
-
-        #InputSearchQuick li {
-            padding: 0 0.5em;
-            height: 4.5em;
-        }
-
-        input {
-            border: none;
-            background-color: #B1B1B1;
-            border-radius: 0.6em;
-            padding: 1.2em;
-            width: var(--inputWidth);
-            border: rgba(0, 0, 0, 0) solid 3px;
-            outline: none;
-        }
-
-        input:focus-visible,
-        input:active {
-            border: rgba(0, 0, 0, 0.667) solid 3px;
-            outline: none;
-        }
-
-        .InputSearch button {
-            color: #FFFFFF;
-            border-radius: 0.3em 3em 3em 0.3em;
-            border: none;
-            padding: 1.2em;
-            border: rgba(0, 0, 0, 0) solid 3px;
-            background-color: #5F5F5F;
-        }
-
-        .InputSearch button:hover {
-            background-color: #555;
-        }
-
-        .InputSearch button:active {
-            background-color: #222;
-        }
-
-        .Cards {
-            display: grid;
-            padding: 0;
-            grid-column: span 4;
-            grid-template-columns: var(--easyWidth);
-            gap: 0.5em;
-        }
-
-        .Cards li {
-            background-color: #efefef;
-            color: #333;
-            padding: var(--cardPadding);
-            text-align: center;
-            list-style: none;
-            font-size: var(--cardFtSize);
-            border-radius: 0.3em;
-            min-height: 2.8em;
-        }
-
-        .Cards li:hover {
-            color: #222;
-            background-color: #FFFFFF;
-        }
-
-        .Cards li:active {
-            background-color: #E5E5E5;
-        }
-
-        .Cards li:visited {
-            background-color: #F1F1F1;
-        }
-
-        a:visited,
-        div:visited {
-            border: 0.2em dotted;
-        }
-
-        a {
-            text-decoration-line: blink;
-        }
-
-        input,
-        button,
-        select,
-        optgroup,
-        textarea {
-            margin: 0;
-            font-family: inherit;
-            font-size: inherit;
-            line-height: inherit;
-        }
-
-        #header {
-            display: block;
-        }
-
-        .link {
-            text-decoration: none;
-        }
-
-        .pd05 {
-            padding: 0.5em;
-        }
-
-        .pd1 {
-            padding: 1em;
-        }
-
-        .pd2 {
-            padding: 2em;
-        }
-
-        .hf28 {
-            width: 28%;
-            padding: 1.5em;
-        }
-
-        .hf30 {
-            width: 30%;
-            padding: 1.2em;
-        }
-
-        .hf33 {
-            width: 33%;
-        }
-
-        .hfull {
-            height: 100%;
-        }
-
-        .e-nmlmouse {
-            cursor: none;
-        }
-
-        .e-stopmouse {
-            cursor: not-allowed;
-        }
-
-        .bg-white {
-            background-color: #f3f3f3;
-        }
-
-        .col {
-            margin: 0.6em;
-        }
-
-        .rows-card {
-            border-radius: 5px;
-            box-shadow: 1px 3px 5px #38383821;
-        }
-
-        .form {
-            flex: 1;
-            display: block;
-            width: 95%;
-            padding: 0.375rem 0.75rem;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #212529;
-            background-clip: padding-box;
-            border: 5px solid rgba(206, 212, 218, 0);
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        }
-
-        .form:focus {
-            color: #212529;
-            background-color: #fff;
-            border-color: #86b7fe;
-            outline: 0;
-            box-shadow: 0;
-            border: 0.2em dotted #000;
-        }
-
-        .btn {
-            display: none;
-        }
-
-        .btn-link {
-            display: block;
-            padding: 0.5rem 1rem;
-            color: #0d6efd;
-            text-decoration: none;
-            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-                border-color 0.15s ease-in-out;
-        }
-
-        .row1-wd,
-        .row2-wd,
-        .row3-wd {
-            padding: 2em;
-        }
-
-        .row1-wd {
-            text-align: left;
-            border-bottom: 2px dotted #666;
-        }
-
-        .row2-wd {
-            display: grid;
-            grid-template-columns: var(--easyWidth);
-            gap: 2em;
-        }
-
-        .row2-search {
-            text-align: left;
-        }
-    </style>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>1Drvs | download Drivers in 1drvs</title>
+	<style>
+		body {
+			--pageMinSize: 10px;
+			--backGColor: #CCC;
+		}
+
+		@media (min-width: 100px) {
+			body {
+				--headerPadding: 0.3em 0;
+				--contentPadding: 0 20px;
+				--easyWidth: repeat(1, 1fr);
+				--inputWidth: auto;
+				--inputPadding: 1em;
+				--inputBtnPadding: 1em 1.5em 1em 1.5em;
+				--cardFtSize: 12px;
+				--cardPadding: 5em 0 1em 0;
+			}
+		}
+
+		@media (min-width: 862px) {
+			body {
+				--easyWidth: repeat(1, 1fr);
+			}
+		}
+
+		@media (min-width: 1200px) {
+			body {
+				--headerPadding: 1em 0;
+				--contentPadding: 0 50px;
+				--easyWidth: repeat(2, 1fr);
+				--inputWidth: 28em;
+				--inputPadding: 1.2em 10em;
+				--inputBtnPadding: 1.2em 1.8em 1.2em 1.8em;
+				--cardFtSize: 18px;
+				--cardPadding: 5em 0 1em 0;
+			}
+
+			#header .Menus {
+				padding: 0 2em;
+			}
+
+			.navbar-toggler {
+				display: none;
+			}
+
+			.nav-link {
+				margin-left: 2em;
+			}
+		}
+
+		:visited {
+			text-decoration-color: rgba(0, 0, 0, 0);
+		}
+
+		body {
+			padding: 0;
+			margin: 0;
+			height: 100%;
+			width: 100%;
+			font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji;
+			overflow-y: hidden;
+		}
+
+		div,
+		span,
+		a,
+		li,
+		button {
+			transition: all 0.3s cubic-bezier(0.57, 0.45, 0, 0.98);
+		}
+
+		li {
+			user-select: none;
+			list-style: none;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.app {
+			height: 100vh;
+			width: 100%;
+			background: #FAFAFA;
+			display: grid;
+			grid: 7% 93% 0% /100%
+		}
+
+		#header {
+			width: 100%;
+			background: #1d478a;
+			border-bottom: #174082 solid 3px;
+			display: flex;
+			color: #CCC;
+			font-weight: 600;
+			padding: var(--headerPadding);
+		}
+
+		#content {
+			background-color: #CCC;
+			padding: var(--contentPadding);
+			text-align: center;
+			z-index: 1;
+		}
+
+		footer {
+			position: fixed;
+			bottom: 0;
+			padding: 12px 12px;
+			color: rgba(0, 0, 0, 0.5);
+			font-size: var(--pageMinSize);
+			text-align: left;
+			z-index: 1001;
+		}
+
+		footer h3,
+		footer h4,
+		footer h5,
+		footer h6 {
+			margin: -0.2em;
+		}
+
+		footer h5 {
+			margin-left: -0.7em;
+			color: rgba(0, 0, 0, 0.2);
+		}
+
+		footer h5 a {
+			color: rgba(0, 0, 0, 0.3);
+		}
+
+		.Menus {
+			flex: 1;
+			display: flex;
+			padding: 0;
+		}
+
+		.nav-brand h5 {
+			margin: -2em 0 0 -38em;
+			;
+			font-size: 1px;
+			transform: scale(0.6);
+
+		}
+
+		.nav-brand,
+		.nav-link {
+			color: #A8A8A8;
+		}
+
+		.Menu {
+			display: flex;
+			margin: 0 1.3em;
+			align-items: center;
+		}
+
+		.MenuSetting {
+			font-size: 10px;
+			margin-right: 5vw;
+		}
+
+		.InputSearch {
+			margin: 2em 0;
+			display: flex;
+			justify-content: center;
+			z-index: 0;
+		}
+
+		.InputSearch:hover,
+		.InputSearch:active {
+			z-index: 10;
+		}
+
+		.InputExc {
+			position: relative;
+			z-index: 1;
+		}
+
+		#InputSearchQuick {
+			position: relative;
+			display: flex;
+			flex-flow: row wrap;
+			padding: 0;
+			width: 100%;
+			margin-top: -1.5em;
+			background: linear-gradient(rgba(168, 168, 168, 0) 6%, #A8A8A8);
+			line-height: 6em;
+			z-index: -1;
+		}
+
+		#InputSearchQuick:hover {}
+
+		#InputSearchQuick li {
+			padding: 0 0.5em;
+			height: 4.5em;
+		}
+
+		input {
+			border: none;
+			background-color: #B1B1B1;
+			border-radius: 0.6em;
+			padding: 1.2em;
+			width: var(--inputWidth);
+			border: rgba(0, 0, 0, 0) solid 3px;
+			outline: none;
+		}
+
+		input:focus-visible,
+		input:active {
+			border: rgba(0, 0, 0, 0.667) solid 3px;
+			outline: none;
+		}
+
+		.InputSearch button {
+			color: #FFFFFF;
+			border-radius: 0.3em 3em 3em 0.3em;
+			border: none;
+			padding: 1.2em;
+			border: rgba(0, 0, 0, 0) solid 3px;
+			background-color: #5F5F5F;
+		}
+
+		.InputSearch button:hover {
+			background-color: #555;
+		}
+
+		.InputSearch button:active {
+			background-color: #222;
+		}
+
+		.Cards {
+			display: grid;
+			padding: 0;
+			grid-column: span 4;
+			grid-template-columns: var(--easyWidth);
+			gap: 0.5em;
+		}
+
+		.Cards li {
+			background-color: #efefef;
+			color: #333;
+			padding: var(--cardPadding);
+			text-align: center;
+			list-style: none;
+			font-size: var(--cardFtSize);
+			border-radius: 0.3em;
+			min-height: 2.8em;
+		}
+
+		.Cards li:hover {
+			color: #222;
+			background-color: #FFFFFF;
+		}
+
+		.Cards li:active {
+			background-color: #E5E5E5;
+		}
+
+		.Cards li:visited {
+			background-color: #F1F1F1;
+		}
+
+		a:visited,
+		div:visited {
+			border: 0.2em dotted;
+		}
+
+		a {
+			text-decoration-line: blink;
+		}
+
+		input,
+		button,
+		select,
+		optgroup,
+		textarea {
+			margin: 0;
+			font-family: inherit;
+			font-size: inherit;
+			line-height: inherit;
+		}
+
+		#header {
+			display: block;
+		}
+
+		.link {
+			text-decoration: none;
+		}
+
+		.pd05 {
+			padding: 0.5em;
+		}
+
+		.pd1 {
+			padding: 1em;
+		}
+
+		.pd2 {
+			padding: 2em;
+		}
+
+		.hf28 {
+			width: 28%;
+			padding: 1.5em;
+		}
+
+		.hf30 {
+			width: 30%;
+			padding: 1.2em;
+		}
+
+		.hf33 {
+			width: 33%;
+		}
+
+		.hfull {
+			height: 100%;
+		}
+
+		.e-nmlmouse {
+			cursor: none;
+		}
+
+		.e-stopmouse {
+			cursor: not-allowed;
+		}
+
+		.bg-white {
+			background-color: #f3f3f3;
+		}
+
+		.col {
+			margin: 0.6em;
+		}
+
+		.rows-card {
+			border-radius: 5px;
+			box-shadow: 1px 3px 5px #38383821;
+		}
+
+		.form {
+			flex: 1;
+			display: block;
+			width: 95%;
+			padding: 0.375rem 0.75rem;
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.5;
+			color: #212529;
+			background-clip: padding-box;
+			border: 5px solid rgba(206, 212, 218, 0);
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+		}
+
+		.form:focus {
+			color: #212529;
+			background-color: #fff;
+			border-color: #86b7fe;
+			outline: 0;
+			box-shadow: 0;
+			border: 0.2em dotted #000;
+		}
+
+		.btn {
+			display: none;
+		}
+
+		.btn-link {
+			display: block;
+			padding: 0.5rem 1rem;
+			color: #0d6efd;
+			text-decoration: none;
+			transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+				border-color 0.15s ease-in-out;
+		}
+
+		.row1-wd,
+		.row2-wd,
+		.row3-wd {
+			padding: 2em;
+		}
+
+		.row1-wd {
+			text-align: left;
+			border-bottom: 2px dotted #666;
+		}
+
+		.row2-wd {
+			display: grid;
+			grid-template-columns: var(--easyWidth);
+			gap: 2em;
+		}
+
+		.row2-search {
+			text-align: left;
+		}
+	</style>
 </head>
 
 <body style="background-color: #EBEBEB;height: 100%;">
-    <div id="header">
-        <div class="Menus">
-            <a class="nav-brand" href="/">1drvs.com<br />
-                <h5>lets download drivers in 1drvs.com</h5>
-            </a>
-            <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <ul class="Menus">
-                <li class="nav-item">
-                    <a class="nav-link active" href="http://ccvcc.cc">软件厅>>></a>
-                </li>
-        </div>
-    </div>
+	<div id="header">
+		<div class="Menus">
+			<a class="nav-brand" href="/">1drvs.com<br />
+				<h5>lets download drivers in 1drvs.com</h5>
+			</a>
+			<button class="navbar-toggler" type="button">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<ul class="Menus">
+				<li class="nav-item">
+					<a class="nav-link active" href="http://ccvcc.cc">软件厅>>></a>
+				</li>
+		</div>
+	</div>
 
-    <div id="content">
-        <div class="rows row1">
-            <div class="alert bg-white bg-gradient row1-wd">
-                <div class="row">
-                    <div class="head_weather">
-                        <div class="spinner-border" role="status">
-                        </div>
-                        <span>3drvs驱动站已部署6%</span>
-                    </div>
-                    <div class="txt_ct head_time">
-                        <div id="timenow1"></div>
-                        <div id="timedate1"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+	<div id="content">
+		<div class="rows row1">
+			<div class="alert bg-white bg-gradient row1-wd">
+				<div class="row">
+					<div class="head_weather">
+						<div class="spinner-border" role="status">
+						</div>
+						<span>3drvs驱动站已部署6%</span>
+					</div>
+					<div class="txt_ct head_time">
+						<div id="timenow1"></div>
+						<div id="timedate1"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <div class="rows row2">
-            <div class="alert bg-white bg-gradient row2-wd">
-                <div class="input-group mb-3 row2-search">
-                    <span class="input-group-text row2-search-text" id="basic-addon3">戴尔产品支持</span>
-                    <input id="scb_dell" type="text" class="form" id="basic-url" aria-describedby="basic-addon1"
-                        onkeydown="keyup_submit()">
-                    <input id="btn_dell" type="button" class="btn" onclick="searching()" />
-                </div>
+		<div class="rows row2">
+			<div class="alert bg-white bg-gradient row2-wd">
+				<div class="input-group mb-3 row2-search">
+					<span class="input-group-text row2-search-text" id="basic-addon3">戴尔产品支持</span>
+					<input id="scb_dell" type="text" class="form" id="basic-url" aria-describedby="basic-addon1"
+						onkeydown="keyup_submit()">
+					<input id="btn_dell" type="button" class="btn" onclick="searching()" />
+				</div>
 
-                <div class="input-group mb-3 row2-search">
-                    <a href="https://newsupport.lenovo.com.cn/"><span class="input-group-text row2-search-text"
-                            id="basic-addon3">联想产品支持</span></a>
-                    <input id="scb_leno" type="text" class="form" id="basic-url" aria-describedby="basic-addon2"
-                        onkeydown="keyup_submit()">
-                    <input id="btn_leno" type="button" class="btn" onclick="searching()" />
-                </div>
+				<div class="input-group mb-3 row2-search">
+					<a href="https://newsupport.lenovo.com.cn/"><span class="input-group-text row2-search-text"
+							id="basic-addon3">联想产品支持</span></a>
+					<input id="scb_leno" type="text" class="form" id="basic-url" aria-describedby="basic-addon2"
+						onkeydown="keyup_submit()">
+					<input id="btn_leno" type="button" class="btn" onclick="searching()" />
+				</div>
 
-                <div class="input-group mb-3 row2-search">
-                    <span class="input-group-text row2-search-text" id="basic-addon3">华硕产品支持</span>
-                    <input id="scb_asus" type="text" class="form" id="basic-url" aria-describedby="basic-addon3"
-                        onkeydown="keyup_submit()">
-                    <input id="btn_asus" type="button" class="btn" onclick="searching()" />
-                </div>
+				<div class="input-group mb-3 row2-search">
+					<span class="input-group-text row2-search-text" id="basic-addon3">华硕产品支持</span>
+					<input id="scb_asus" type="text" class="form" id="basic-url" aria-describedby="basic-addon3"
+						onkeydown="keyup_submit()">
+					<input id="btn_asus" type="button" class="btn" onclick="searching()" />
+				</div>
 
-                <div class="input-group mb-3 row2-search">
-                    <span class="input-group-text row2-search-text" id="basic-addon3">华为产品支持</span>
-                    <input id="scb_wawy" type="text" class="form" id="basic-url" aria-describedby="basic-addon3"
-                        onkeydown="keyup_submit()">
-                    <input id="btn_wawy" type="button" class="btn" onclick="searching()" />
-                </div>
+				<div class="input-group mb-3 row2-search">
+					<span class="input-group-text row2-search-text" id="basic-addon3">华为产品支持</span>
+					<input id="scb_wawy" type="text" class="form" id="basic-url" aria-describedby="basic-addon3"
+						onkeydown="keyup_submit()">
+					<input id="btn_wawy" type="button" class="btn" onclick="searching()" />
+				</div>
 
-                <div class="input-group mb-3 row2-search">
-                    <span class="input-group-text row2-search-text" id="basic-addon3">惠普产品支持</span>
-                    <input id="scb_hupu" type="text" class="form" id="basic-url" aria-describedby="basic-addon4"
-                        onkeydown="keyup_submit()">
-                    <input id="btn_hupu" type="button" class="btn" onclick="searching()" />
-                </div>
+				<div class="input-group mb-3 row2-search">
+					<span class="input-group-text row2-search-text" id="basic-addon3">惠普产品支持</span>
+					<input id="scb_hupu" type="text" class="form" id="basic-url" aria-describedby="basic-addon4"
+						onkeydown="keyup_submit()">
+					<input id="btn_hupu" type="button" class="btn" onclick="searching()" />
+				</div>
 
-                <div class="input-group mb-3 row2-search">
-                    <span class="input-group-text row2-search-text" id="basic-addon3">美国苹果产品支持</span>
-                    <input id="scb_appl" type="text" class="form" id="basic-url" aria-describedby="basic-addon4"
-                        onkeydown="keyup_submit()">
-                    <input id="btn_appl" type="button" class="btn" onclick="searching()" />
-                </div>
+				<div class="input-group mb-3 row2-search">
+					<span class="input-group-text row2-search-text" id="basic-addon3">美国苹果产品支持</span>
+					<input id="scb_appl" type="text" class="form" id="basic-url" aria-describedby="basic-addon4"
+						onkeydown="keyup_submit()">
+					<input id="btn_appl" type="button" class="btn" onclick="searching()" />
+				</div>
 
-                <div class="input-group mb-3 row2-search">
-                    <span class="input-group-text row2-search-text" id="basic-addon3">打印机产品支持</span>
-                    <input id="scb_prnt" type="text" class="form" id="basic-url" aria-describedby="basic-addon4"
-                        onkeydown="keyup_submit()">
-                    <input id="btn_prnt" type="button" class="btn" onclick="searching()" />
-                </div>
+				<div class="input-group mb-3 row2-search">
+					<span class="input-group-text row2-search-text" id="basic-addon3">打印机产品支持</span>
+					<input id="scb_prnt" type="text" class="form" id="basic-url" aria-describedby="basic-addon4"
+						onkeydown="keyup_submit()">
+					<input id="btn_prnt" type="button" class="btn" onclick="searching()" />
+				</div>
 
-                <div class="input-group mb-3 row2-search">
-                    <span class="input-group-text row2-search-text" id="basic-addon3">备用选项暂时禁用</span>
-                    <input id="scb_ua" type="text" class="form e-stopmouse" id="basic-url"
-                        aria-describedby="basic-addon4" onkeydown="keyup_submit()">
-                    <input id="btn_ua" type="button" class="btn" onclick="searching()" />
-                </div>
-            </div>
-        </div>
+				<div class="input-group mb-3 row2-search">
+					<span class="input-group-text row2-search-text" id="basic-addon3">备用选项暂时禁用</span>
+					<input id="scb_ua" type="text" class="form e-stopmouse" id="basic-url"
+						aria-describedby="basic-addon4" onkeydown="keyup_submit()">
+					<input id="btn_ua" type="button" class="btn" onclick="searching()" />
+				</div>
+			</div>
+		</div>
 
-        <div class="rows row2">
-            <div class="alert bg-white bg-gradient row1-wd">
-                <div class="rows">
-                    <span class="col row2-card">
-                        <div>
-                            >
-                        </div>
-                    </span>
-                    <span class="col row2-card">
-                        <div>
-                            >
-                        </div>
-                    </span>
-                    <span class="col row2-card">
-                        <div>
-                            >
-                        </div>
-                    </span>
-                    <span class="row2-card-tmp">
-                        <div>
-                            >
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
+		<div class="rows row2">
+			<div class="alert bg-white bg-gradient row1-wd">
+				<div class="rows">
+					<span class="col row2-card">
+						<div>
+							>
+						</div>
+					</span>
+					<span class="col row2-card">
+						<div>
+							>
+						</div>
+					</span>
+					<span class="col row2-card">
+						<div>
+							>
+						</div>
+					</span>
+					<span class="row2-card-tmp">
+						<div>
+							>
+						</div>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script>
 
-        function diskid() {
-            var fso = new ActiveXObject("Scripting.FileSystemObject");
-            var ff = fso.GetDrive("c");
-            alert("这是C盘序号：" + ff.SerialNumber);
-        }
+		function diskid() {
+			var fso = new ActiveXObject("Scripting.FileSystemObject");
+			var ff = fso.GetDrive("c");
+			alert("这是C盘序号：" + ff.SerialNumber);
+		}
 
-        function searching() {
-            alert("now touch");
-        }
+		function searching() {
+			alert("now touch");
+		}
 
-        function keyup_submit(e) {
-            var evt = window.event || e;
-            if (evt.keyCode == 13) {
-                var idd = event.target.id
-                var ele = document.getElementById(event.target.id).value;
-                //alert(idd+' （ ~ · w · ~ ） '+ele)
-                if (idd == "scb_dell") {
-                    window.location.href = 'https://www.dell.com/support/home/zh-hk/product-support/servicetag/' + ele + '/overview';
-                }
-                else if (idd == "scb_leno") {
-                    if (ele.length > 19) {
-                        ele = ele.slice(2, ele.length)
-                        window.location.href = 'https://newsupport.lenovo.com.cn/driveList.html?fromsource=driveList&selname=' + ele;
-                    }
-                    else if (ele.length > 10) {
-                        ele = ele.slice(6, 8) + ele
-                        ele = ele.slice(0, 8)
-                        window.location.href = 'https://newsupport.lenovo.com.cn/driveList.html?fromsource=driveList&selname=' + ele;
-                    }
-                    else {
-                        window.location.href = 'https://newsupport.lenovo.com.cn/driveList.html?fromsource=driveList&selname=' + ele;
-                    }
-                }
-                else if (idd == "scb_hupu") {
-                    window.location.href = 'https://support.hp.com/hk-zh/deviceSearch?q=' + ele + '&origin=pdp';
-                    //  hp-pps-services/clc/cc/cn/lc/zh/oid/"+seriesNum;
-                }
-                else if (idd == "scb_asus") {
-                    window.location.href = 'https://www.baidu.com/s?ie=utf-8&f=8&wd=' + ele + ' asus.com';
-                }
-                else if (idd == "scb_appl") {
-                    window.location.href = 'https://checkcoverage.apple.com/cn/zh/?sn=' + ele;
-                }
-                else if (idd == "scb_wawy") {
-                    window.location.href = 'https://consumer.huawei.com/cn/support/warranty-query/?' + ele;
-                }
-                else if (idd == "scb_prnt") {
-                    diskid();
-                }
-                else if (idd == "scb_ua") {
-                    var agent = navigator.userAgent.toLowerCase();
-                    alert(agent);
-                    setTimeout(function () {
-                        window.location.href = '#';
-                    }, 5000);
-                }
-            }
-        }
+		function keyup_submit(e) {
+			var evt = window.event || e;
+			if (evt.keyCode == 13) {
+				var idd = event.target.id
+				var ele = document.getElementById(event.target.id).value;
+				//alert(idd+' （ ~ · w · ~ ） '+ele)
+				if (idd == "scb_dell") {
+					window.location.href = 'https://www.dell.com/support/home/zh-hk/product-support/servicetag/' + ele + '/overview';
+				}
+				else if (idd == "scb_leno") {
+					if (ele.length > 19) {
+						ele = ele.slice(2, ele.length)
+						window.location.href = 'https://newsupport.lenovo.com.cn/driveList.html?fromsource=driveList&selname=' + ele;
+					}
+					else if (ele.length > 10) {
+						ele = ele.slice(6, 8) + ele
+						ele = ele.slice(0, 8)
+						window.location.href = 'https://newsupport.lenovo.com.cn/driveList.html?fromsource=driveList&selname=' + ele;
+					}
+					else {
+						window.location.href = 'https://newsupport.lenovo.com.cn/driveList.html?fromsource=driveList&selname=' + ele;
+					}
+				}
+				else if (idd == "scb_hupu") {
+					window.location.href = 'https://support.hp.com/hk-zh/deviceSearch?q=' + ele + '&origin=pdp';
+					//  hp-pps-services/clc/cc/cn/lc/zh/oid/"+seriesNum;
+				}
+				else if (idd == "scb_asus") {
+					window.location.href = 'https://www.baidu.com/s?ie=utf-8&f=8&wd=' + ele + ' asus.com';
+				}
+				else if (idd == "scb_appl") {
+					window.location.href = 'https://checkcoverage.apple.com/cn/zh/?sn=' + ele;
+				}
+				else if (idd == "scb_wawy") {
+					window.location.href = 'https://consumer.huawei.com/cn/support/warranty-query/?' + ele;
+				}
+				else if (idd == "scb_prnt") {
+					ele = ele
+					window.location.href = 'https://www.bing.com/search?q=site%3Adrvsky.com+' + ele;
+				}
+				else if (idd == "scb_ua") {
+					var agent = navigator.userAgent.toLowerCase();
+					alert(agent);
+					setTimeout(function () {
+						window.location.href = '#';
+					}, 5000);
+				}
+			}
+		}
 
-        var agent = navigator.userAgent.toLowerCase();
-        var isMac = function () {
-            return /macintosh|mac os x/i.test(navigator.userAgent);
-        }();
-        if (agent.indexOf("windows") >= 0) {
-            if (agent.indexOf("nt 10") >= 0 || agent.indexOf("nt 11") >= 0) {
-                if (agent.indexOf("win32") >= 0 || agent.indexOf("wow32") >= 0) {
-                    console.log("芝士Win10-32位");
-                } else if (agent.indexOf("win64") >= 0 || agent.indexOf("wow64") >= 0) {
-                    console.log("芝士Win10-64位");
-                }
-            } else if (agent.indexOf("nt 7") >= 0) {
-                if (agent.indexOf("win32") >= 0 || agent.indexOf("wow32") >= 0) {
-                    console.log("芝士Win7-32位");
-                } else if (agent.indexOf("win64") >= 0 || agent.indexOf("wow64") >= 0) {
-                    console.log("芝士Win7-64位");
-                }
-            }
-        }
+		var agent = navigator.userAgent.toLowerCase();
+		var isMac = function () {
+			return /macintosh|mac os x/i.test(navigator.userAgent);
+		}();
+		if (agent.indexOf("windows") >= 0) {
+			if (agent.indexOf("nt 10") >= 0 || agent.indexOf("nt 11") >= 0) {
+				if (agent.indexOf("win32") >= 0 || agent.indexOf("wow32") >= 0) {
+					console.log("芝士Win10-32位");
+				} else if (agent.indexOf("win64") >= 0 || agent.indexOf("wow64") >= 0) {
+					console.log("芝士Win10-64位");
+				}
+			} else if (agent.indexOf("nt 7") >= 0) {
+				if (agent.indexOf("win32") >= 0 || agent.indexOf("wow32") >= 0) {
+					console.log("芝士Win7-32位");
+				} else if (agent.indexOf("win64") >= 0 || agent.indexOf("wow64") >= 0) {
+					console.log("芝士Win7-64位");
+				}
+			}
+		}
 
-        if (isMac) {
-            console.log("芝士MacOS");
-        }
+		if (isMac) {
+			console.log("芝士MacOS");
+			alert("当前您是MacOS，暂时不被本站内容所支持");
+		}
 
-        (function () {
-            'use strict'
-            var devtools = {
-                open: false,
-                orientation: null
-            }
-            var threshold = 160
-            var emitEvent = function (state, orientation) {
-                window.dispatchEvent(new CustomEvent('devtoolschange', {
-                    detail: {
-                        open: state,
-                        orientation: orientation
-                    }
-                }))
-            }
-            setInterval(function () {
-                var widthThreshold = window.outerWidth - window.innerWidth > threshold
-                var heightThreshold = window.outerHeight - window.innerHeight > threshold
-                var orientation = widthThreshold ? 'vertical' : 'horizontal'
+		(function () {
+			'use strict'
+			var devtools = {
+				open: false,
+				orientation: null
+			}
+			var threshold = 160
+			var emitEvent = function (state, orientation) {
+				window.dispatchEvent(new CustomEvent('devtoolschange', {
+					detail: {
+						open: state,
+						orientation: orientation
+					}
+				}))
+			}
+			setInterval(function () {
+				var widthThreshold = window.outerWidth - window.innerWidth > threshold
+				var heightThreshold = window.outerHeight - window.innerHeight > threshold
+				var orientation = widthThreshold ? 'vertical' : 'horizontal'
 
-                if (!(heightThreshold && widthThreshold) &&
-                    ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
-                    if (!devtools.open || devtools.orientation !== orientation) {
-                        emitEvent(true, orientation)
-                    }
-                    devtools.open = true
-                    devtools.orientation = orientation
-                } else {
-                    if (devtools.open) {
-                        emitEvent(false, null)
-                    }
-                    devtools.open = false
-                    devtools.orientation = null
-                }
-            }, 500)
-            if (typeof module !== 'undefined' && module.exports) {
-                module.exports = devtools
-            } else {
-                window.devtools = devtools
-            }
-        })();
+				if (!(heightThreshold && widthThreshold) &&
+					((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
+					if (!devtools.open || devtools.orientation !== orientation) {
+						emitEvent(true, orientation)
+					}
+					devtools.open = true
+					devtools.orientation = orientation
+				} else {
+					if (devtools.open) {
+						emitEvent(false, null)
+					}
+					devtools.open = false
+					devtools.orientation = null
+				}
+			}, 500)
+			if (typeof module !== 'undefined' && module.exports) {
+				module.exports = devtools
+			} else {
+				window.devtools = devtools
+			}
+		})();
 
-        window.addEventListener('devtoolschange', function (e) {
-            if (e.detail.open) {
-                document.getElementsByTagName('body')[0].innerHTML = '<h1>警告：</h1><h3>请登录后再进行后台编辑</h3><h5 style="color:#999">code: 0xc000007125</h5>';
-            }
-        })
+		window.addEventListener('devtoolschange', function (e) {
+			if (e.detail.open) {
+				document.getElementsByTagName('body')[0].innerHTML = '<h1>警告：</h1><h3>请登录后再进行后台编辑</h3><h5 style="color:#999">code: 0xc000007125</h5>';
+			}
+		})
 
-    </script>
+	</script>
 </body>
 
 </html>
