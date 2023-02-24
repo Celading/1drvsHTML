@@ -460,7 +460,7 @@
 				</div>
 
 				<div class="input-group mb-3 row2-search">
-					<a herf="https://www.asus.com.cn/support/warranty-status-inquiry/"><span
+					<a href="https://www.asus.com.cn/support/warranty-status-inquiry/"><span
 							class="input-group-text row2-search-text" id="basic-addon3">华硕产品支持</span></a>
 					<input id="scb_asus" type="text" class="form" id="basic-url" aria-describedby="basic-addon3"
 						onkeydown="keyup_submit()">
@@ -468,21 +468,23 @@
 				</div>
 
 				<div class="input-group mb-3 row2-search">
-					<span class="input-group-text row2-search-text" id="basic-addon3">华为产品支持</span>
+					<a href="https://www.asus.com.cn/support/warranty-status-inquiry/"><span
+							class="input-group-text row2-search-text" id="basic-addon3">华为产品支持</span></a>
 					<input id="scb_wawy" type="text" class="form" id="basic-url" aria-describedby="basic-addon3"
 						onkeydown="keyup_submit()">
 					<input id="btn_wawy" type="button" class="btn" onclick="searching()" />
 				</div>
 
 				<div class="input-group mb-3 row2-search">
-					<span class="input-group-text row2-search-text" id="basic-addon3">惠普产品支持</span>
+					<a href="https://support.hp.com/cn-zh/check-warranty"><span
+							class="input-group-text row2-search-text" id="basic-addon3">惠普产品支持</span></a>
 					<input id="scb_hupu" type="text" class="form" id="basic-url" aria-describedby="basic-addon4"
 						onkeydown="keyup_submit()">
 					<input id="btn_hupu" type="button" class="btn" onclick="searching()" />
 				</div>
 
 				<div class="input-group mb-3 row2-search">
-					<span class="input-group-text row2-search-text" id="basic-addon3">美国苹果产品支持</span>
+					<span class="input-group-text row2-search-text" id="basic-addon3">美国苹果保修查询</span>
 					<input id="scb_appl" type="text" class="form" id="basic-url" aria-describedby="basic-addon4"
 						onkeydown="keyup_submit()">
 					<input id="btn_appl" type="button" class="btn" onclick="searching()" />
@@ -553,16 +555,11 @@
 				var ele = document.getElementById(event.target.id).value;
 				//alert(idd+' （ ~ · w · ~ ） '+ele)
 				if (idd == "scb_dell") {
-					window.location.href = 'https://www.dell.com/support/home/zh-hk/product-support/servicetag/' + ele + '/overview';
+					window.location.href = 'https://www.dell.com/support/home/zh-cn/product-support/servicetag/' + ele + '/overview';
 				}
 				else if (idd == "scb_leno") {
 					if (ele.length > 19) {
 						ele = ele.slice(2, ele.length)
-						window.location.href = 'https://newsupport.lenovo.com.cn/driveList.html?fromsource=driveList&selname=' + ele;
-					}
-					else if (ele.length > 10) {
-						ele = ele.slice(6, 8) + ele
-						ele = ele.slice(0, 8)
 						window.location.href = 'https://newsupport.lenovo.com.cn/driveList.html?fromsource=driveList&selname=' + ele;
 					}
 					else {
@@ -580,7 +577,7 @@
 					window.location.href = 'https://checkcoverage.apple.com/cn/zh/?sn=' + ele;
 				}
 				else if (idd == "scb_wawy") {
-					window.location.href = 'https://consumer.huawei.com/cn/support/warranty-query/?' + ele;
+					window.location.href = 'https://consumer.huawei.com/cn/support/driver-list/?' + ele;
 				}
 				else if (idd == "scb_prnt") {
 					ele = ele
