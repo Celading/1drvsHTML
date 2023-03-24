@@ -468,7 +468,7 @@
 				</div>
 
 				<div class="input-group mb-3 row2-search">
-					<a href="https://www.asus.com.cn/support/warranty-status-inquiry/"><span
+					<a href="https://consumer.huawei.com/cn/support/warranty-query/"><span
 							class="input-group-text row2-search-text" id="basic-addon3">华为产品支持</span></a>
 					<input id="scb_wawy" type="text" class="form" id="basic-url" aria-describedby="basic-addon3"
 						onkeydown="keyup_submit()">
@@ -555,6 +555,7 @@
 				var ele = document.getElementById(event.target.id).value;
 				//alert(idd+' （ ~ · w · ~ ） '+ele)
 				if (idd == "scb_dell") {
+					nwin=window.open('http://dell.com/support')
 					window.location.href = 'https://www.dell.com/support/home/zh-cn/product-support/servicetag/' + ele + '/overview';
 				}
 				else if (idd == "scb_leno") {
