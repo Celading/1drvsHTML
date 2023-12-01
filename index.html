@@ -445,7 +445,7 @@
         <div class="rows row2">
             <div class="alert bg-white bg-gradient row2-wd">
                 <div class="input-group mb-3 row2-search">
-                    <a href="https://www.dell.com/support"><span class="input-group-text row2-search-text"
+                    <a href="https://www.dell.com/support/?1drvs"><span class="input-group-text row2-search-text"
                             id="basic-addon3">戴尔产品支持</span></a>
                     <input id="scb_dell" type="text" class="form" id="basic-url" aria-describedby="basic-addon1"
                         onkeydown="keyup_submit()">
@@ -453,7 +453,7 @@
                 </div>
 
                 <div class="input-group mb-3 row2-search">
-                    <a href="https://support.lenovo.com.cn"><span class="input-group-text row2-search-text"
+                    <a href="https://support.lenovo.com.cn/?1drvs"><span class="input-group-text row2-search-text"
                             id="basic-addon3">联想产品支持</span></a>
                     <input id="scb_leno" type="text" class="form" id="basic-url" aria-describedby="basic-addon2"
                         onkeydown="keyup_submit()">
@@ -461,7 +461,7 @@
                 </div>
 
                 <div class="input-group mb-3 row2-search">
-                    <a href="https://www.asus.com.cn/support/Warranty-Status-inquiry"><span
+                    <a href="https://www.asus.com.cn/support/Warranty-Status-inquiry/?1drvs"><span
                             class="input-group-text row2-search-text" id="basic-addon3">华硕产品支持</span></a>
                     <input id="scb_asus" type="text" class="form" id="basic-url" aria-describedby="basic-addon3"
                         onkeydown="keyup_submit()">
@@ -469,7 +469,7 @@
                 </div>
 
                 <div class="input-group mb-3 row2-search">
-                    <a href="https://consumer.huawei.com/cn/support/warranty-query/"><span
+                    <a href="https://consumer.huawei.com/cn/support/warranty-query/?1drvs"><span
                             class="input-group-text row2-search-text" id="basic-addon3">华为产品支持</span></a>
                     <input id="scb_wawy" type="text" class="form" id="basic-url" aria-describedby="basic-addon3"
                         onkeydown="keyup_submit()">
@@ -477,7 +477,7 @@
                 </div>
 
                 <div class="input-group mb-3 row2-search">
-                    <a href="https://support.hp.com/cn-zh/check-warranty"><span
+                    <a href="https://support.hp.com/cn-zh/check-warranty/?1drvs"><span
                             class="input-group-text row2-search-text" id="basic-addon3">惠普产品支持</span></a>
                     <input id="scb_hupu" type="text" class="form" id="basic-url" aria-describedby="basic-addon4"
                         onkeydown="keyup_submit()">
@@ -556,17 +556,17 @@
                 var ele = document.getElementById(event.target.id).value;
                 //alert(idd+' （ ~ · w · ~ ） '+ele)
                 if (idd == "scb_dell") {
-                    nwin = window.open('http://dell.com/support')
+                    nwin = window.open('http://dell.com/support/?1drvs')
                     sleep(1600)
                     window.location.href = 'https://www.dell.com/support/home/zh-cn/product-support/servicetag/' + ele + '/overview';
                 }
                 else if (idd == "scb_leno") {
                     if (ele.length > 19) {
                         ele = ele.slice(2, ele.length)
-                        window.location.href = 'https://newsupport.lenovo.com.cn/driveList.html?fromsource=driveList&selname=' + ele;
+                        window.location.href = 'https://newsupport.lenovo.com.cn/driveList.html?1drvs&fromsource=driveList&selname=' + ele;
                     }
                     else {
-                        window.location.href = 'https://newsupport.lenovo.com.cn/driveList.html?fromsource=driveList&selname=' + ele;
+                        window.location.href = 'https://newsupport.lenovo.com.cn/driveList.html?1drvs&fromsource=driveList&selname=' + ele;
                     }
                 }
                 else if (idd == "scb_hupu") {
@@ -574,7 +574,7 @@
                     //  hp-pps-services/clc/cc/cn/lc/zh/oid/"+seriesNum;
                 }
                 else if (idd == "scb_asus") {
-                    window.location.href = 'https://www.baidu.com/s?ie=utf-8&f=8&wd=' + ele + ' asus.com';
+                    window.location.href = 'https://www.baidu.com/s?1drvs&ie=utf-8&f=8&wd=' + ele + ' asus.com';
                 }
                 else if (idd == "scb_appl") {
                     window.location.href = 'https://checkcoverage.apple.com/cn/zh/?sn=' + ele;
@@ -584,7 +584,8 @@
                 }
                 else if (idd == "scb_prnt") {
                     ele = ele
-                    window.location.href = 'https://www.bing.com/search?q=site%3Adrvsky.com+' + ele;
+                    //window.location.href = 'https://www.bing.com/search?q=site%3Adrvsky.com+' + ele;
+                    window.location.href = 'https://www.baidu.com/s?1drvs&ie=utf-8&f=8&wd=驱动天空+' + ele;
                 }
                 else if (idd == "scb_ua") {
                     var agent = navigator.userAgent.toLowerCase();
